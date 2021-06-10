@@ -9,7 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { MagazinsComponent } from './magazin/magazin.component';
+import { MagazinsComponent } from './magazins/magazins.component';
 
 @NgModule({
   declarations: [
