@@ -1,24 +1,24 @@
-<h1 id="tableLabel">Produse din magazin</h1>
+<h1 id="tableLabel">Weather forecast</h1>
 
-<p>Mai jos gasiti lista completa cu produsele din magazinul nostru.</p>
+<p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!magazins"><em>Loading...</em></p>
+<p *ngIf="!forecasts"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="magazins">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
-      <th>Denumire</th>
-      <th>Specificatii</th>
-      <th>Status</th>
-      <th>Pret</th>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let magazin of magazins">
-      <td>{{ magazin.Denumire }}</td>
-      <td>{{ magazin.Specificatii }}</td>
-      <td>{{ magazin.Status }}</td>
-      <td>{{ magazin.Pret }}</td>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
     </tr>
   </tbody>
 </table>

@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Produse din magazin</h1>
+
+<p>Mai jos gasiti lista completa cu produsele din magazinul nostru.</p>
+
+<p *ngIf="!magazins"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="magazins">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Denumire</th>
+      <th>Specificatii</th>
+      <th>Status</th>
+      <th>Pret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let magazin of magazins">
+      <td>{{ magazin.ID }}</td>
+      <td>{{ magazin.Denumire }}</td>
+      <td>{{ magazin.Specificatii }}</td>
+      <td>{{ magazin.Status }}</td>
+      <td>{{ magazin.Pret }}</td>
+    </tr>
+  </tbody>
+</table>

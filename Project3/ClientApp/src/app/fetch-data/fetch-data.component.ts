@@ -6,18 +6,18 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public magazin: Magazin[];
+  public forecasts: WeatherForecast[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Magazin[]>(baseUrl + 'magazin').subscribe(result => {
-      this.magazin = result;
+    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
+      this.forecasts = result;
     }, error => console.error(error));
   }
 }
 
-interface Magazin {
-  Denumire: string;
-  Specificatii: string;
-  Status: string;
-  Pret: BigInteger;
+interface WeatherForecast {
+  date: string;
+  temperatureC: number;
+  temperatureF: number;
+  summary: string;
 }
