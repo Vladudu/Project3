@@ -21,6 +21,11 @@
       <td>{{ magazin.specificatii }}</td>
       <td>{{ magazin.status }}</td>
       <td>{{ magazin.pret }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="deleteMagazin(magazin)">Delete</button>
+      </td>
     </tr>
+    <br>
+    <button class="btn btn-primary" [routerLink]="['/magazinsAdd']">Add produs</button>
   </tbody>
 </table>

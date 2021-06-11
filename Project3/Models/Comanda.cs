@@ -9,7 +9,6 @@ namespace Proiect3.Models
     {
         public Guid ID { get; set; }
         public string Continut { get; set; }
-
         public string AdresaPentruLivrare { get; set; }
         public DateTime DataComenzii { get; set; }
         public int TotalPret { get; set; }

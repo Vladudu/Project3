@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Proiect3.Models;
+using Project3.Models;
 
 namespace Project3.Data
 {
@@ -26,5 +27,9 @@ namespace Project3.Data
 
             modelBuilder.Entity<Proiect3.Models.Magazin>().HasData(new Proiect3.Models.Magazin() { ID = new Guid("57EA92FF-5AC7-4F49-B327-08AA85AC132C"), Denumire = "Nvidia GTX1650", Specificatii = "Placa video Nvidia GTX 1650, 4GB RAM", Status = "Ultimele doua produse" });
         }
+
+        public DbSet<Project3.Models.Contracte> Contracte { get; set; }
+
+        public DbSet<Project3.Models.BuildComplet> BuildComplet { get; set; }
     }
 }

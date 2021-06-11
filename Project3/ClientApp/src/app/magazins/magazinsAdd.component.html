@@ -1,0 +1,20 @@
+<h1 id="tableLabel">Add produs</h1>
+
+<p>Denumire: </p>
+<input [(ngModel)]="magazin.Denumire" />
+<br>
+
+<p>Specificatii: </p>
+<input [(ngModel)]="magazin.Specificatii" />
+<br>
+
+<p>Status: </p>
+<input [(ngModel)]="magazin.Status" />
+<br>
+
+<p>Pret: </p>
+<input [(ngModel)]="magazin.Pret" />
+<br>
+
+<br>
+<button class="btn btn-primary" (click)="saveMagazin()">Salvare produs</button>

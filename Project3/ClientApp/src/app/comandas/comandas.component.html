@@ -1,0 +1,23 @@
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="comandas">
+  <thead>
+    <tr>
+      <th>Continut</th>
+      <th>AdresaPentruLivrare</th>
+      <th>DataComenzii</th>
+      <th>TotalPret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comanda of comandas">
+      <td>{{ comanda.continut }}</td>
+      <td>{{ comanda.adresaPentruLivrare }}</td>
+      <td>{{ comanda.dataComenzii }}</td>
+      <td>{{ comanda.totalPret }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="deleteComanda(comanda)">Delete</button>
+      </td>
+    </tr>
+    <br>
+    <button class="btn btn-primary" [routerLink]="['/comandasAdd']">Adaugare comanda</button>
+  </tbody>
+</table>

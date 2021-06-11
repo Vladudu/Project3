@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project3.Data;
 
 namespace Project3.Migrations
 {
     [DbContext(typeof(Project3Context))]
-    partial class Project3ContextModelSnapshot : ModelSnapshot
+    [Migration("20210610220510_add_new_table_contracte")]
+    partial class add_new_table_contracte
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,29 +101,6 @@ namespace Project3.Migrations
                             Specificatii = "Placa video Nvidia GTX 1650, 4GB RAM",
                             Status = "Ultimele doua produse"
                         });
-                });
-
-            modelBuilder.Entity("Project3.Models.BuildComplet", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Componente")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DataComenzii")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NumeClient")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PretTotal")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("BuildComplet");
                 });
 
             modelBuilder.Entity("Project3.Models.Contracte", b =>

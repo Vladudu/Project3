@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MagazinsComponent } from './magazins/magazins.component';
+import { MagazinAddComponent } from './magazins/magazinsAdd.component';
+import { ComandasComponent } from './comandas/comandas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { MagazinsComponent } from './magazins/magazins.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    MagazinsComponent
+    MagazinsComponent,
+    MagazinAddComponent,
+    ComandasComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +35,8 @@ import { MagazinsComponent } from './magazins/magazins.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'magazins', component: MagazinsComponent },
+      { path: 'magazinsAdd', component: MagazinAddComponent },
+      { path: 'comandas', component: ComandasComponent },
     ])
   ],
   providers: [],

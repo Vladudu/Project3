@@ -76,28 +76,28 @@ namespace Project3.Controllers
         // POST: api/Magazins
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Magazin>> PostMagazin(Magazin magazin)
+        [HttpPost]
+        public async Task PostDuckbill([FromBody] Magazin magazin)
         {
+            if (magazin.ID == Guid.Empty)
+            {
+                magazin.ID = Guid.NewGuid();
+            }
+
             _context.Magazin.Add(magazin);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetMagazin", new { id = magazin.ID }, magazin);
         }
 
         // DELETE: api/Magazins/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMagazin(Guid id)
-        {
-            var magazin = await _context.Magazin.FindAsync(id);
-            if (magazin == null)
+        public async Task DeleteMagazin(Guid id)
+        {   
+            Magazin magazin = await _context.Magazin.FindAsync(id);
+            if (magazin != null)
             {
-                return NotFound();
+                _context.Magazin.Remove(magazin);
+                await _context.SaveChangesAsync();
             }
-
-            _context.Magazin.Remove(magazin);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool MagazinExists(Guid id)
